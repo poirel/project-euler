@@ -25,4 +25,13 @@ What is the value of the first triangle number to have over five hundred
 divisors?
 """
 
+from utils import triangle_number_generator
+from utils import factors
 
+tri_gen = triangle_number_generator()
+
+tri = next(tri_gen)
+tri_factors = []
+while len(factors(tri))<=500:
+  tri = next(tri_gen)
+print tri

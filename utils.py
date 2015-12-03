@@ -1,4 +1,4 @@
-from math import sqrt, ceil, floor
+from math import sqrt, floor
 
 def gen_primes(n):
   """
@@ -31,6 +31,15 @@ def prime_factors(n):
   if len(factors)==0:  factors = [n_normalized]
   return factors
 
+def factors(n):
+  f = set()
+  for i in range(1, int(sqrt(n))+1):
+    if n%i==0:
+      f.update([i, n/i])
+  f = list(f)
+  f.sort()
+  return f
+
 def fib(n):
   """
   Returns list of numbers in the Fibonacci sequence in the inclusive range [1, n].
@@ -39,6 +48,23 @@ def fib(n):
   while seq[-1]<n:
     seq.append(seq[-2]+seq[-1])
   return seq
+
+def fib_generator():
+  """
+  A generator for the Fibonnaci sequence
+  """
+  a, b = 1, 2
+  while True:
+    yield a
+    a, b = b, a+b
+
+def triangle_number_generator():
+  curr_sum = 1
+  curr_num = 1
+  while True:
+    yield curr_sum
+    curr_num += 1
+    curr_sum += curr_num
 
 def str_reverse(s):
   """

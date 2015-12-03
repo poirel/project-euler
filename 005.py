@@ -9,8 +9,8 @@ What is the smallest number that is evenly divisible by all of the numbers
 from 1 to 20?
 """
 
-from utils import prime_factors
 from collections import Counter
+from utils import prime_factors
 
 UPPER = 20
 
