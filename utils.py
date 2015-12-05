@@ -40,6 +40,9 @@ def factors(n):
   f.sort()
   return f
 
+def proper_factors(n):
+  return factors(n)[:-1]
+
 def fib(n):
   """
   Returns list of numbers in the Fibonacci sequence in the inclusive range [1, n].
