@@ -19,24 +19,8 @@ How many Sundays fell on the first of the month during the twentieth
 century (1 Jan 1901 to 31 Dec 2000)?
 """
 
-MONTHS = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
-
-def days_in_month(month, year):
-  num_days = {
-    'jan': 31,
-    'feb': 28 if (year%100!=0 or year%400==0) else 29,
-    'mar': 31,
-    'apr': 30,
-    'may': 31,
-    'jun': 30,
-    'jul': 31,
-    'aug': 31,
-    'sep': 30,
-    'oct': 31,
-    'nov': 30,
-    'dec': 31
-  }
-  return num_days[month.lower()[:3]]
+from utils import MONTHS
+from utils import  days_in_month
 
 total_days = 1 # the first day, Jan 1, 1900 is a monday.
 lonely_mondays = 0
