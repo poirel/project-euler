@@ -117,3 +117,11 @@ def vertical_flip(matrix):
 
 def horizontal_flip(matrix):
   return [row[::-1] for row in matrix]
+
+def permutations(s):
+  if len(s) <= 1:
+    yield s
+  else:
+    for i in range(len(s)):
+      for p in permutations(s[:i] + s[i+1:]):
+        yield s[i] + p
