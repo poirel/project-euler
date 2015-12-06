@@ -20,7 +20,7 @@ with open('./resources/names.txt') as infile:
 names.sort()
 
 def alphabetical_value(name):
-  return sum(ALPHABET.index(x) for x in name.lower())
+  return sum(ALPHABET.index(x)+1 for x in name.lower())
 
 total = 0
 for i,name in enumerate(names, 1):
