@@ -18,7 +18,7 @@ for x in range(dim):
   result[x][dim-1] = 1
   result[dim-1][x] = 1
 
-# fill DP grig from bottom-right to top-left of matrix
+# fill DP grid from bottom-right to top-left of matrix
 for i in range(dim-2, -1, -1):
   for j in range(dim-2, -1, -1):
     result[i][j] = result[i][j+1] + result[i+1][j]
