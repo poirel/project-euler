@@ -100,11 +100,14 @@ def str_reverse(s):
   l.reverse()
   return ''.join(l)
 
+def num_reverse(n):
+  return int(str_reverse(str(n)))
+
 def is_palindrome(s):
   """
   Return True if the given string is a palindrome; False, otherwise.
   """
-  return s==str_reverse(s)
+  return str(s)==str_reverse(str(s))
 
 def product(numbers):
   return reduce(lambda x,y: x*y, numbers, 1)
